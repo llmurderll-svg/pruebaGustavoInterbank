@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/navigation_detail">
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.example.testgustavointerbank.ui.Menu.Details.DetailFragment"
+        android:label="@string/title_products"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/goto_operations"
+            app:destination="@id/navigation_moves" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.example.testgustavointerbank.ui.Menu.Notifications.NotificationFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notification"/>
+    <fragment
+        android:id="@+id/navigation_moves"
+        android:name="com.example.testgustavointerbank.ui.Menu.Moves.MovesFragment"
+        android:label="@string/title_moves" >
+        <argument
+            android:name="product"
+            app:argType="com.example.testgustavointerbank.models.ProductModel" />
+    </fragment>
+</navigation>
